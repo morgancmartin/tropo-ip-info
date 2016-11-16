@@ -18,8 +18,7 @@ def get_whitelist_response():
     Returns: string
     '''
     return check_output(["nslookup", "-q=TXT",
-                                    "_netblocks.tropo.com",
-                                    "8.8.8.8"])
+                        "_netblocks.tropo.com", "8.8.8.8"])
 
 if __name__ == '__main__':
     print_whitelist()

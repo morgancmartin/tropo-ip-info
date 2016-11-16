@@ -2,9 +2,11 @@
 class TropoWhitelist
   def self.print_whitelist
     response = self.get_whitelist_response
-    response.split("\n").each do |line|
-      cidr_block = line.split('"')[1]
-      puts "tropo," + cidr_block if cidr_block
+    if response
+      response.split("\n").each do |line|
+        cidr_block = line.split('"')[1]
+        puts "tropo," + cidr_block if cidr_block
+      end
     end
   end
 

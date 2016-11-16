@@ -13,7 +13,7 @@ def print_whitelist():
             print("tropo," + cidr_block)
 
 def get_whitelist_response():
-    '''Retrieves Tropo's whitelist
+    '''Retrieves Tropo's whitelist using "nslookup" tool through CLI
 
     Returns: string
     '''

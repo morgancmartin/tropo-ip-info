@@ -9,8 +9,12 @@ def print_whitelist():
         lines = response.decode().split("\n")
         for line in lines:
             if "\"" in line:
-                cidr_block = line.split("\"")[1]
-                print("tropo," + cidr_block)
+                csv_line = format_cidr_to_csv(line)
+                print(csv_line)
+
+def format_cidr_to_csv(cidr):
+    cidr_block = cidr.split("\"")[1]
+    return "tropo," + cidr_block
 
 
 def get_tropo_whitelist_response():

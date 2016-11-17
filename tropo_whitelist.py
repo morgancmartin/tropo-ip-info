@@ -1,5 +1,6 @@
 from subprocess import check_output
 
+
 def print_whitelist():
     '''Retrieves tropo's whitelist and prints to STDOUT.
     '''
@@ -11,13 +12,14 @@ def print_whitelist():
                 cidr_block = line.split("\"")[1]
                 print("tropo," + cidr_block)
 
+
 def get_tropo_whitelist_response():
     '''Retrieves Tropo's whitelist using "nslookup" tool through CLI
 
     Returns: string
     '''
     return check_output(["nslookup", "-q=TXT",
-                        "_netblocks.tropo.com", "8.8.8.8"])
+                         "_netblocks.tropo.com", "8.8.8.8"])
 
 if __name__ == '__main__':
     print_whitelist()

@@ -12,6 +12,7 @@ def print_whitelist():
                 csv_line = format_cidr_to_csv(line)
                 print(csv_line)
 
+
 def format_cidr_to_csv(cidr):
     cidr_block = cidr.split("\"")[1]
     return "tropo," + cidr_block
